@@ -1,6 +1,6 @@
 # Legal Document Scraper
 
-This Python project scrapes legal documents from the Vietnamese Legal Library (thuvienphapluat.vn) using Scrapy.
+This Python project scrapes legal documents from the Vietnamese Legal Library (thuvienphapluat.vn) using Crawlee.
 
 ## Features
 
@@ -11,12 +11,12 @@ This Python project scrapes legal documents from the Vietnamese Legal Library (t
 ## Requirements
 
 - Python 3.8+
-- Dependencies: scrapy, pandas, tqdm
+- Dependencies: crawlee, camoufox, typing-extensions, pandas, tqdm
 
 Install dependencies:
 
 ```bash
-pip install scrapy pandas tqdm
+pip install crawlee camoufox typing-extensions pandas tqdm
 ```
 
 ## Usage
@@ -39,27 +39,27 @@ pip install scrapy pandas tqdm
 
 3. **Scrape documents:**
    ```bash
-   scrapy runspider spider.py -o output/result.jsonl
+   python crawler.py
    ```
-   This runs the spider to scrape document details from the filtered URLs and outputs JSON Lines data to `output/result.jsonl`.
+   This runs the crawler to scrape document details from the filtered URLs and outputs JSON data to Crawlee's default dataset.
 
 ## Files
 
 - `main.py`: Downloads sitemaps
 - `filter.py`: Filters URLs by date
-- `spider.py`: Scrapy spider for scraping documents
+- `crawler.py`: Crawlee crawler for scraping documents
 - `data/`: Directory containing downloaded sitemap files
 - `filtered_urls.csv`: Filtered list of URLs to scrape
 
 ## Output
 
-- Scrapy outputs scraped document data to `output/result.jsonl` in JSON Lines format.
+- Crawlee outputs scraped document data to its default dataset in JSON format.
 
 ## Notes
 
 - Ensure you have sufficient disk space for the sitemap downloads (hundreds of XML files).
 - Respect the website's terms of service and robots.txt.
-- The project uses a custom User-Agent to mimic a browser.
+- The project uses Camoufox browser to mimic a browser.
 
 ## Disclaimer
 
@@ -68,4 +68,4 @@ This project is provided for educational and research purposes only. It is not a
 - **Data Accuracy:** The scraped data may not be complete, accurate, or up-to-date. Always verify information from official sources.
 - **Legal Compliance:** Ensure your use complies with Vietnamese laws, international copyright laws, and the website's terms of service. Web scraping may be restricted in some jurisdictions.
 - **Usage Risk:** Use this tool responsibly. The authors are not liable for any misuse, damages, or legal consequences arising from its use.
-- **No Warranty:** This software is provided "as is" without warranty of any kind.
+- **No Warranty:** This software is provided "as is" without warranty of any kind, express or implied.

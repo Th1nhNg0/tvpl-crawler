@@ -40,7 +40,7 @@ class CamoufoxPlugin(PlaywrightBrowserPlugin):
                 self._playwright, **self._browser_launch_options
             ),
             # Increase, if camoufox can handle it in your use case.
-            max_open_pages_per_browser=10,
+            max_open_pages_per_browser=2,
             # This turns off the crawlee header_generation. Camoufox has its own.
             header_generator=None,
         )
