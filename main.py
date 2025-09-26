@@ -39,7 +39,7 @@ total = len(sitemaps)
 print(f"Found {total} subsitemaps to download.")
 
 # Download in parallel
-with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+with concurrent.futures.ThreadPoolExecutor() as executor:
     futures = [executor.submit(download_file, loc) for loc in sitemaps]
     for future in tqdm(
         concurrent.futures.as_completed(futures),
